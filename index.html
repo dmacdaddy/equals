@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1a130e" />
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Equals is a pocket calculator that never clears. Tap the equals key, buy machines, and let the numbers count themselves."
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Equals</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="./assets/index-VxyPNO74.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CfSuAcBs.css">
+  </head>
+  <body>
+    <div class="chassis" id="chassis">
+      <header class="brand">
+        <div class="brand-mark" aria-hidden="true">=</div>
+        <div class="brand-copy">
+          <h1>EQUALS</h1>
+          <p id="build-label">Model Σ-1 · idle calculator</p>
+        </div>
+        <button type="button" id="settings" class="icon-btn" aria-label="Settings and statistics">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6"></path>
+          </svg>
+        </button>
+      </header>
+      <div class="solar" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <section class="lcd" aria-label="Number display">
+        <div class="lcd-top">
+          <span class="lcd-run"><i></i>RUN</span>
+          <span id="global" class="lcd-chip" hidden>×1</span>
+          <span id="exp" class="lcd-chip" hidden>EXP 0</span>
+          <span class="lcd-grow"></span>
+          <span id="rate">0/s</span>
+          <span id="per-tap">1/tap</span>
+        </div>
+        <div class="lcd-digits" id="digits">
+          <span class="lcd-ghost" aria-hidden="true">88888888888888</span>
+          <span id="count" data-value="0">0</span>
+        </div>
+        <div class="lcd-bottom">
+          <span id="saved" class="lcd-saved">SAVED</span>
+          <span>NUMBERS</span>
+        </div>
+        <div class="lcd-scan" aria-hidden="true"></div>
+      </section>
+      <button type="button" id="equals" class="equals" aria-label="Tap equals to make numbers">
+        <span class="equals-glyph">=</span>
+        <span class="equals-label">TAP</span>
+      </button>
+      <div id="how" class="how" hidden>
+        <p>Tap the big equals key to mint numbers. Buy a machine and it keeps counting while the keypad is closed.</p>
+        <button type="button" id="how-dismiss">Got it</button>
+      </div>
+      <div class="controls">
+        <div class="buybar" id="buybar">
+          <span class="buybar-label">Buy</span>
+          <div class="seg" role="group" aria-label="How many to buy">
+            <button type="button" data-mode="1" aria-pressed="true">1</button>
+            <button type="button" data-mode="10" aria-pressed="false">10</button>
+            <button type="button" data-mode="100" aria-pressed="false">100</button>
+            <button type="button" data-mode="max" aria-pressed="false">Max</button>
+          </div>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Shop">
+          <button type="button" id="tab-machines" role="tab" aria-selected="true" data-tab="machines">Machines</button>
+          <button type="button" id="tab-upgrades" role="tab" aria-selected="false" data-tab="upgrades">
+            Upgrades <span id="up-badge" class="badge" hidden>0</span>
+          </button>
+          <button type="button" id="tab-exponents" role="tab" aria-selected="false" data-tab="exponents">
+            Exp <span id="exp-badge" class="badge" hidden>+1</span>
+          </button>
+        </div>
+      </div>
+      <div id="shop" class="shop" role="tabpanel"></div>
+      <div id="toasts" class="toasts" aria-live="polite"></div>
+      <div id="fx" class="fx" aria-hidden="true"></div>
+      <span class="screw screw-a" aria-hidden="true"></span>
+      <span class="screw screw-b" aria-hidden="true"></span>
+      <span class="screw screw-c" aria-hidden="true"></span>
+      <span class="screw screw-d" aria-hidden="true"></span>
+    </div>
+    <p id="sr-count" class="sr-only" aria-live="polite"></p>
+    <dialog id="sheet"></dialog>
+    <noscript><p class="noscript">Equals needs JavaScript to count.</p></noscript>
+  </body>
+</html>
